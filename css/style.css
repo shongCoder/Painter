@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    background: linear-gradient(120deg,#b97cff,rgb(235, 162, 210)) no-repeat;
+}
+
+#wrapper {
+    width: 465px;
+    background-color: #c0c0c0;
+    margin: 0 auto;
+    border: 1.5px solid white;
+    box-shadow: 10px 20px 50px rgba(123, 56, 187, 0.5);
+    margin-top: 50px;
+}
+
+/* 타이틀 */
+.title-bar {
+    background: linear-gradient(90deg,rgb(235, 162, 210),#b97cff);
+    padding: 5px 2px 5px 5px
+}
+.title-bar-text {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    display: flex; justify-content:center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.title-bar-text img {
+    margin-right: 5px;
+    width: 13px;
+    height: 13px;
+}
+
+
+/* 헤더 */
+#header {
+    width: 100%;
+    height: 30px;
+    background-color: #c0c0c0;
+    display: block;
+    font-size: 0.9rem;
+}
+#header ul {
+    padding: 7px 0 0 10px;
+    margin: 0;
+}
+#header ul li {
+    display: inline;
+    padding: 0 10px 0 0;
+    margin: 0;
+}
+#header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+/* 좌버튼 우캔버스 */
+#paint_container {
+    display: flex;
+}
+canvas {
+    width: 399px;
+    height: 300px;
+    border: 0.5px solid;
+    background-image: url(../img/retro.gif);
+    background-size: 100%;
+}
+button {
+    padding: 0;
+}
+#buttons {
+    padding: 0 6px 0 6px;
+}
+#buttons button {
+    min-width: 24px;
+    display: block;
+    
+}
+
+#mode_btn {
+    float: left;
+}
+#destroy_btn {
+    float: left;
+}
+
+/* 이미지 첨부 버튼 */
+#img_label {
+    width: 48px;
+    text-align: center;
+    font-size: 9px;
+}
+
+#img_label img{
+    width: 16px;
+    display: block;
+    margin: 0 auto;
+}
+#img_attach {
+    display: none;
+}
+
+/* 버튼 이미지 */
+.fill {
+    background-image: url(../img/fill.png);
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.draw {
+    background-image: url(../img/draw.png);
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.destroy {
+    background-image: url(../img/destroy.png);
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.eraser {
+    background-image: url(../img/eraser.png);
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.save {
+    background-image: url(../img/save.png);
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+/* ==버튼 이미지== */
+
+/* 선 두께 */
+#line {
+    text-align: center;
+    display: block;
+    width: 48px;
+    margin-top: 10px;
+}
+#line_width {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+/* 팔렛트 */
+#color {
+    display: flex;
+    position: relative;
+    margin: 20px 0 0 5px;
+    height: 40px;
+}
+#select_color_box {
+    background-color: #dfdfdf;
+    width: 32px;
+    height: 32px;
+    box-shadow: inset 1.5px 1.5px 1px black;
+}
+.select_color:first-child {
+    width: 22px;
+    height: 24px;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    top: 1px;
+    left: 1px;
+    z-index: 1;
+}
+.select_color:last-child {
+    width: 22px;
+    height: 24px;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    top: 9px;
+    left: 9px;
+    z-index: 0;
+}
+.select_color::-webkit-color-swatch {
+    border: 1px solid white;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+#color_options {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 78px;
+    height: 30px;
+    margin-left: 5px;
+    border: 1px solid #cecece;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.color_option {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    margin: 0 2px 2px 0;
+    box-shadow: inset 1px 1px 1px black;
+}
+.color_option:nth-child(5n) {
+    margin-right: 0;
+}
+.color_option:last-child {
+    margin-right: 0;
+}
+.color_option:nth-child(n+6) {
+    margin-bottom: 0;
+}
+
+/* 텍스트 박스 */
+#text_attach {
+    margin-left: 20px;
+    width: 300px;
+    height: 32px;
+}
